@@ -2,6 +2,12 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
+const mainCard = document.querySelector('.cards')
+axios.get('https://api.github.com/users/dangus1924')
+.then(res => {
+  console.log(res.data);
+  mainCard.appendChild(cardCreator(res.data));
+})
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
